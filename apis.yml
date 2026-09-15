@@ -26,17 +26,28 @@ tags:
 - Market Research
 - Consumer Neuroscience
 - Media
+- Software-as-a-Service
+- Germany
+tags_raw:
+- Company
+- Advertising
+- Marketing
+- Artificial Intelligence
+- Creative Effectiveness
+- Ad Testing
+- Market Research
+- Consumer Neuroscience
+- Media
 - SaaS
 - Germany
 apis:
-- aid: aimpower-creative-effectiveness-api
+- aid: aimpower:aimpower-creative-effectiveness-api
   name: Brainsuite Creative Effectiveness API
   description: Automated, programmatic access to the same AI creative-evaluation engine behind the Brainsuite
     application. Partners and enterprise customers upload assets (or supply asset URLs), declare attributes
-    such as brand, market and channel, and receive ACE effectiveness reports and KPI scores back for
-    integration into DAM systems, media-creation tools, generative-AI platforms and internal analytics.
-    Credentials and the API reference are issued on request; no public specification or reference is
-    published.
+    such as brand, market and channel, and receive ACE effectiveness reports and KPI scores back for integration
+    into DAM systems, media-creation tools, generative-AI platforms and internal analytics. Credentials
+    and the API reference are issued on request; no public specification or reference is published.
   humanURL: https://brainsuite.ai/en/creative-effectiveness-api/
   baseURL: https://api.brainsuite.ai/brainsuite
   tags:
