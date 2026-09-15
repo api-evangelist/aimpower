@@ -1,0 +1,74 @@
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://brainsuite.ai/en/creative-effectiveness-api/, the Brainsuite Releases section of the
+  public help centre, and direct probes of api.brainsuite.ai and brainsuite.statuspage.io on
+  2026-09-14.
+description: >-
+  What Brainsuite publishes about how its API changes over time. The answer is: almost
+  nothing. There is a real, actively maintained product changelog, but no versioning policy,
+  no deprecation policy, no Sunset or Deprecation header commitment, no SLA document and no
+  status page. The only versioning signal that exists at all is structural - the company's
+  own runtime configuration is served from a path segment /v2/, which shows the API carries
+  a path-based major version, but no policy governs it publicly.
+
+versioning:
+  scheme: path-segment major version (observed)
+  evidence_url: https://api.brainsuite.ai/brainsuite/frontend-configuration/v2/configuration
+  evidence_status: 200
+  current_version: v2
+  policy_published: false
+  policy_url: null
+  note: >-
+    Version inferred from an observed, anonymously reachable path on the API host. No
+    versioning policy, support window, or version-negotiation header is documented.
+
+deprecation:
+  policy_published: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  deprecated_operations: []
+  note: >-
+    No deprecation policy exists on any public Brainsuite surface, and no entry in the
+    35-article release history between 2024-11-05 and 2026-09-06 announces a removal,
+    breaking change or end-of-life. Every published release is additive.
+
+sla:
+  published: false
+  url: null
+  note: >-
+    The pricing page states that support-response speed is a plan entitlement ("fastest
+    support SLA" on Enterprise), but no SLA document, uptime target or credit schedule is
+    published.
+
+status_page:
+  present: false
+  url: null
+  note: >-
+    No status page was found. status.brainsuite.ai does not resolve, and
+    brainsuite.statuspage.io is not a claimed Atlassian Statuspage - it 302s to the
+    Statuspage marketing site, which is the unclaimed-subdomain behaviour. No StatusPage
+    pointer is emitted.
+  evidence:
+  - url: https://brainsuite.statuspage.io/
+    status: 302
+    finding: Redirects to https://www.atlassian.com/software/statuspage - not a live status page.
+
+change_log:
+  present: true
+  url: https://brainsuite.zendesk.com/hc/en-us/sections/22770902457885-Brainsuite-Releases
+  artifact: changelog/aimpower-changelog.yml
+  covers_api: false
+
+support:
+  channels:
+  - type: contact form
+    url: https://brainsuite.ai/en/contact-us/
+  - type: help centre
+    url: https://brainsuite.zendesk.com/hc/en-us
+  - type: ticket submission
+    url: https://brainsuite.zendesk.com/hc/en-us/requests/new
+  - type: customer success manager
+    note: Named CSM from the Advanced plan, dedicated CSM on Enterprise.

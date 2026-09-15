@@ -1,0 +1,125 @@
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://brainsuite.zendesk.com/hc/en-us/articles/25862139707549-Introducing-the-Brainsuite-API,
+  https://brainsuite.ai/en/creative-effectiveness-api/,
+  https://brainsuite.zendesk.com/hc/en-us/articles/22152596932253-What-about-privacy-issues-such-as-server-locations,
+  and anonymous probes of https://api.brainsuite.ai/ on 2026-09-14. No OpenAPI exists to derive
+  from; every field below is either read from a provider statement or recorded as unpublished.
+description: >-
+  Cross-cutting runtime semantics of the Brainsuite Creative Effectiveness API. This profile is
+  mostly a record of what an integrator CANNOT learn before signing: the company describes the
+  API's purpose and shape in prose - upload an asset or give a URL, declare brand, market and
+  channel, get an ACE report back - but publishes no reference, so the concrete conventions an
+  agent or an integrating engineer needs (idempotency, pagination, error envelope, rate-limit
+  signalling, retry semantics, reversal) exist only inside the documentation bundle issued with
+  credentials. Everything marked unpublished below was searched for and not found, not skipped.
+
+base_url: https://api.brainsuite.ai/brainsuite
+base_url_source: >-
+  Stated by the provider's own anonymous runtime configuration document as
+  brainsuitePublicApiBaseUrl at
+  https://api.brainsuite.ai/brainsuite/frontend-configuration/v2/configuration (HTTP 200).
+api_style: REST over HTTPS, JSON responses (observed on the one anonymous endpoint)
+public_reference_published: false
+
+authentication:
+  scheme: Credentials issued on request; scheme not published.
+  platform_sign_in: OpenID Connect against Amazon Cognito (eu-central-1_i8L26ssHB)
+  detail: authentication/aimpower-authentication.yml
+
+idempotency:
+  supported: unknown
+  coverage: none
+  mechanism: null
+  scope: []
+  key_header: null
+  retention: null
+  conflict_behavior: null
+  docs: null
+  note: >-
+    No idempotency mechanism is documented on any public Brainsuite surface. The API's primary
+    operation is an asset submission that starts a billable AI evaluation, which is exactly the
+    shape of call where a client retry after a timeout could charge and score the same asset
+    twice - and nothing published tells an integrator whether that is safe. coverage is recorded
+    as none because none is published; if a key header exists inside the private documentation
+    bundle, this should be upgraded on a future round with the provider's own wording.
+
+pagination:
+  style: unpublished
+  request_params: null
+  response_fields: null
+  docs: null
+  note: >-
+    The API is described as retrieving reports for large asset volumes ("thousands of assets"),
+    so a listing surface almost certainly exists, but no pagination style, cursor, limit
+    parameter or envelope field is published.
+
+versioning:
+  style: path segment
+  current: v2
+  evidence: https://api.brainsuite.ai/brainsuite/frontend-configuration/v2/configuration
+  policy: unpublished
+  detail: lifecycle/aimpower-lifecycle.yml
+
+error_envelope:
+  format: unpublished
+  problem_json: false
+  observed: >-
+    The only error body reachable anonymously is the AWS API Gateway default
+    {"message":"Unauthorized"} returned with HTTP 401 for every path. That is the gateway
+    speaking, not the application, so it says nothing about the application's own error shape.
+  docs: null
+
+rate_limit_signaling:
+  headers: unpublished
+  exhaustion_status: unpublished
+  detail: rate-limits/aimpower-rate-limits.yml
+
+request_tracing:
+  request_id_header: unpublished
+  note: >-
+    The platform runs Datadog RUM on the front end, so server-side correlation ids very likely
+    exist, but no request-id or trace header is documented for API consumers.
+
+async_processing:
+  model: >-
+    Evaluation is asynchronous by nature - assets are submitted, processed by the AI models, and
+    a report becomes available afterwards. The company documents email push notification "when
+    processing is completed" for the application. Whether the API exposes a webhook, a callback
+    URL, or requires polling is not published.
+  webhooks_documented: false
+  polling_documented: false
+
+reversibility:
+  grade: none
+  assessed: true
+  write_surface: true
+  write_operations:
+  - Submit an asset (upload, or supply an asset URL) for ACE evaluation - billable, usage-priced.
+  - Declare or update asset attributes such as brand, market and channel.
+  reversal_operations: []
+  window: null
+  docs: null
+  note: >-
+    No cancel, delete, void, undo or restore operation is documented for the API, and no window
+    is stated for any of them. The application (not the API) gained asset archiving and project
+    renaming in the 2026-08-23 release, which implies a soft-delete of some kind exists in the
+    data model, but nothing published says whether it is reachable over the API, whether it
+    refunds or voids a billable evaluation, or how long an archived asset can be restored. No
+    window is asserted here, because asserting one the provider has not stated is the single
+    error in this artifact that could cost a user money.
+
+dry_run_mode:
+  supported: unknown
+  note: >-
+    Not documented. The nearest published equivalent is the self-serve DIY interface, which the
+    company positions as the manual counterpart to the API for experimentation and A/B testing -
+    a separate product path, not a dry-run flag on the API.
+
+cross_links:
+  authentication: authentication/aimpower-authentication.yml
+  scopes: scopes/aimpower-scopes.yml
+  lifecycle: lifecycle/aimpower-lifecycle.yml
+  rate_limits: rate-limits/aimpower-rate-limits.yml
+  conformance: conformance/aimpower-conformance.yml

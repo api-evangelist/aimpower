@@ -1,0 +1,144 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  Direct HTTP probes of every host this record knows, 2026-09-14. The authorization-server
+  host was not guessed: it is named by Brainsuite's own anonymous runtime configuration
+  document at https://api.brainsuite.ai/brainsuite/frontend-configuration/v2/configuration,
+  which publishes the Amazon Cognito user pool (eu-central-1_i8L26ssHB) backing the platform.
+description: >-
+  Well-known discovery probe for Brainsuite.ai. No host the company controls serves any
+  /.well-known/ document. The marketing site (WordPress) returns a hard 404 on every path;
+  the application host (app.brainsuite.ai) and the Vanta trust centre (trust.brainsuite.ai)
+  are single-page-app catch-alls that answer HTTP 200 with an HTML shell for every path,
+  which is NOT a document and is recorded here as a miss. The one real discovery document
+  found is the OpenID Connect configuration for the company's Amazon Cognito user pool,
+  which is served from an AWS host rather than a Brainsuite domain - so no WellKnown
+  pointer is emitted, and the document is wired as OpenIDConnect on the API entry instead.
+
+hosts:
+- host: brainsuite.ai
+  note: Marketing site (WordPress). Hard 404 on every well-known path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.brainsuite.ai
+  note: 301 redirect to the apex host for every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+- host: aimpower.ai
+  note: >-
+    Former company domain; 301 redirects to brainsuite.ai. aimpower.de redirects to the
+    German site. aimpower.io does not resolve.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+- host: api.brainsuite.ai
+  note: >-
+    Product API host (AWS API Gateway behind CloudFront). Every path answers
+    {"message":"Unauthorized"} with HTTP 401 - including the well-known paths.
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 401
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+- host: app.brainsuite.ai
+  note: >-
+    Angular single-page application. Returns HTTP 200 with the same 16,953-byte HTML shell
+    for every path, including paths that do not exist - a soft-200 catch-all, not a
+    document. Recorded as a miss. robots.txt is a real document (Disallow: /).
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: HTML SPA shell, not a security.txt - treated as absent.
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: HTML SPA shell, not a discovery document - treated as absent.
+  - path: /.well-known/api-catalog
+    status: 200
+    note: HTML SPA shell - treated as absent.
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: HTML SPA shell, not an AgentCard - treated as absent.
+  - path: /.well-known/agent.json
+    status: 200
+    note: HTML SPA shell, not an AgentCard - treated as absent.
+- host: trust.brainsuite.ai
+  note: >-
+    Vanta-hosted trust centre (EU tenant, slug fithz68u9jp7dwx30lhfo). Same soft-200
+    catch-all behaviour - every path returns the 5,647-byte Vanta SPA shell.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: Vanta SPA shell - treated as absent.
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: Vanta SPA shell - treated as absent.
+- host: auth.brainsuite.ai
+  note: >-
+    Custom Amazon Cognito hosted-UI domain (the authorization and token endpoints named by
+    the OIDC discovery document). Returns a JSON error - "This URL doesn't exist on the
+    authorization server" - for every well-known path; /oauth2/authorize answers 302.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/jwks.json
+    status: 404
+- host: cognito-idp.eu-central-1.amazonaws.com
+  note: >-
+    NOT a Brainsuite-controlled host. This is the AWS-served discovery surface for
+    Brainsuite's own Cognito user pool eu-central-1_i8L26ssHB, reached because the
+    company's runtime configuration names that pool. The document is real and describes
+    Brainsuite's authorization server (endpoints on auth.brainsuite.ai), so it is saved and
+    wired as OpenIDConnect - but it earns no WellKnown pointer, because Brainsuite does not
+    serve it.
+  documents:
+  - path: /eu-central-1_i8L26ssHB/.well-known/openid-configuration
+    status: 200
+    file: aimpower-openid-configuration.json
+  - path: /eu-central-1_i8L26ssHB/.well-known/jwks.json
+    status: 200
+
+summary:
+  hosts_probed: 8
+  documents_found: 2
+  security_txt: false
+  api_catalog: false
+  agent_card: false
+  ai_plugin: false
+  oauth_metadata: true
+  oauth_metadata_host: cognito-idp.eu-central-1.amazonaws.com

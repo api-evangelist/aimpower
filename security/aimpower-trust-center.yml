@@ -1,0 +1,55 @@
+generated: '2026-09-14'
+method: searched
+source: https://trust.brainsuite.ai/
+description: >-
+  Brainsuite operates a public trust centre at trust.brainsuite.ai, hosted by Vanta on its EU
+  tenant (trust-report slug fithz68u9jp7dwx30lhfo, document title "Brainsuite.ai Trust
+  Center"). The page is live and is a real trust report, but its entire body renders
+  client-side: the served HTML is a 5.6KB shell that answers HTTP 200 for every path under
+  the host, and no Vanta JSON endpoint reachable anonymously returns the report content. No
+  certification name could therefore be read, and none is recorded below. Because no
+  certification is readable, no Compliance pointer is emitted for this provider - the trust
+  centre's existence is a fact; its contents are not something this pass can assert.
+present: true
+url: https://trust.brainsuite.ai/
+provider: Vanta (EU tenant)
+http_status: 200
+machine_readable: false
+certifications: []
+certifications_readable: false
+subprocessors_published: true
+subprocessors_url: https://brainsuite.ai/en/data-protection/
+subprocessors_note: >-
+  The data-protection page names subprocessors in prose - AWS, HubSpot, Google Analytics,
+  LinkedIn, Zendesk, Datadog, Usercentrics, Amazon Cognito and Vimeo - spread across the
+  document rather than in a single table or machine-readable list.
+data_protection_officer:
+  external: true
+  name: heyData GmbH
+  address: Schuetzenstrasse 5, 10117 Berlin, Germany
+  email: datenschutz@heydata.eu
+posture:
+  gdpr: self-declared
+  hosting: AWS eu-central-1 (Frankfurt am Main, Germany)
+  encryption_at_rest: Amazon SSE-S3, client-specific buckets
+  encryption_in_transit: HTTPS
+  customer_data_used_for_model_training: false
+  customer_data_training_source: >-
+    https://brainsuite.zendesk.com/hc/en-us/articles/22152711650717-Do-you-use-my-data-to-train-AI-models
+  pii: >-
+    The company states it does not work with end-consumer personally identifiable
+    information.
+evidence:
+- url: https://trust.brainsuite.ai/
+  status: 200
+  finding: Live Vanta trust report; contents render client-side only.
+- url: https://brainsuite.ai/.well-known/security.txt
+  status: 404
+  finding: No RFC 9116 security.txt on any company-controlled host.
+- url: https://brainsuite.ai/en/data-protection/
+  status: 200
+  finding: GDPR posture, DPO and subprocessors published; no certification named.
+gaps:
+- No named certification (SOC 2, ISO 27001, TISAX) is readable from any public surface.
+- No security.txt, so no machine-discoverable vulnerability-reporting contact.
+- No bug bounty or coordinated-disclosure page was found on HackerOne, Bugcrowd or Intigriti.

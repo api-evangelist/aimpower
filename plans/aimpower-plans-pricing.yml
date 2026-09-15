@@ -1,0 +1,88 @@
+generated: '2026-09-14'
+method: searched
+source: https://brainsuite.ai/en/pricing/
+description: >-
+  Brainsuite publishes a four-tier plan ladder differentiated by included seats, app and KPI
+  scope, support level and customisation depth - but publishes NO prices, no currency and no
+  billing period on any of the four tiers. Every tier routes to "Start your free trial" or a
+  sales conversation. The Creative Effectiveness API is priced separately and only in prose:
+  the partner page states it is "usage-based pricing that scales with you", with optional
+  pre-commitments and inclusive volumes as adoption grows, and names no rate, unit or
+  minimum. Currency is unstated; the company invoices from Germany.
+pricing_url: https://brainsuite.ai/en/pricing/
+api_pricing_url: https://brainsuite.ai/en/creative-effectiveness-api/
+prices_published: false
+currency: null
+billing_period: null
+free_tier: false
+free_trial: true
+free_trial_url: https://brainsuite.ai/en/demo/
+plan_count: 4
+plans:
+- name: Starter
+  price: null
+  currency: null
+  period: null
+  audience: Small teams, broad asset scope, but a small number of assets
+  seats_included: 3
+  includes:
+  - All AI Apps and pre-test features
+  - Full KPI scope and the single-number effectiveness score
+  - Asset library, benchmarks, PowerPoint reports
+  - Self-service user management
+  quota: null
+  overage: null
+- name: Advanced
+  price: null
+  currency: null
+  period: null
+  audience: Small to medium cross-functional teams with broad scope
+  seats_included: 8
+  includes:
+  - Everything in Starter
+  - Unlimited static testing
+  - Custom KPIs and effectiveness framework
+  - Single sign-on
+  - Named Customer Success Manager
+  - Two business reviews per year
+  quota: null
+  overage: null
+- name: Professional
+  price: null
+  currency: null
+  period: null
+  audience: Large cross-functional teams with broad scope and high asset volume
+  seats_included: 20
+  includes:
+  - Everything in Advanced
+  - Custom apps with 200+ tailoring options
+  - Priority support
+  - Quarterly business review
+  - Custom validation studies
+  quota: null
+  overage: null
+- name: Enterprise
+  price: null
+  currency: null
+  period: null
+  audience: Strategic implementation to build a global effectiveness capability
+  seats_included: 40
+  seats_note: "40+ seats included"
+  includes:
+  - Everything in Professional
+  - Dedicated Customer Success Manager
+  - Fastest support SLA
+  quota: null
+  overage: null
+api_pricing:
+  model: usage-based
+  published_rates: false
+  detail: >-
+    "Usage-based pricing that scales with you", with pre-commitments and inclusive volumes
+    available as adoption grows. No unit, rate card, tier table or minimum commitment is
+    published; access is arranged through the partner contact route.
+  contact: https://brainsuite.ai/en/contact-us/
+notes:
+- >-
+  The pricing page links a German-language variant at /en/pricing_german/; it carries the
+  same four tiers and likewise publishes no prices.

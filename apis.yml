@@ -1,23 +1,104 @@
 aid: aimpower
-name: Aimpower
-description: 'Aimpower is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Brainsuite.ai
+description: Brainsuite.ai GmbH - founded in 2020 in Hamburg as aimpower GmbH, now registered at Kuddewoerde,
+  Germany - builds Brainsuite, an AI creative-effectiveness platform that predicts how an advertising
+  asset will perform before any media budget is committed. Built on applied consumer-neuroscience models,
+  it scores video, static, packaging, shelf, out-of-home, digital-banner and social-media creative against
+  an ACE (Advertising Creative Effectiveness) score with pillars for attention, persuasion, strategic
+  fit, processing ease, emotional engagement and branding. Alongside the self-serve app at app.brainsuite.ai,
+  it sells a Creative Effectiveness API that partner platforms - generative-AI tools, creative production
+  suites, ad-tech, DAM systems and creator networks - embed to score every asset in-workflow. The API
+  is marketed publicly but its reference and credentials are issued only through a sales conversation.
 url: https://raw.githubusercontent.com/api-evangelist/aimpower/refs/heads/main/apis.yml
+image: https://brainsuite.ai/wp-content/uploads/2025/09/brainsuite_logo-1.webp
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-14'
 modified: '2026-09-14'
 tags:
 - Company
-apis: []
+- Advertising
+- Marketing
+- Artificial Intelligence
+- Creative Effectiveness
+- Ad Testing
+- Market Research
+- Consumer Neuroscience
+- Media
+- SaaS
+- Germany
+apis:
+- aid: aimpower-creative-effectiveness-api
+  name: Brainsuite Creative Effectiveness API
+  description: Automated, programmatic access to the same AI creative-evaluation engine behind the Brainsuite
+    application. Partners and enterprise customers upload assets (or supply asset URLs), declare attributes
+    such as brand, market and channel, and receive ACE effectiveness reports and KPI scores back for
+    integration into DAM systems, media-creation tools, generative-AI platforms and internal analytics.
+    Credentials and the API reference are issued on request; no public specification or reference is
+    published.
+  humanURL: https://brainsuite.ai/en/creative-effectiveness-api/
+  baseURL: https://api.brainsuite.ai/brainsuite
+  tags:
+  - Creative Effectiveness
+  - Advertising
+  - Artificial Intelligence
+  properties:
+  - type: Documentation
+    url: https://brainsuite.zendesk.com/hc/en-us/articles/25862139707549-Introducing-the-Brainsuite-API
+  - type: OpenIDConnect
+    url: well-known/aimpower-openid-configuration.json
+  - type: Authentication
+    url: authentication/aimpower-authentication.yml
+  - type: OAuthScopes
+    url: scopes/aimpower-scopes.yml
+  - type: Conventions
+    url: conventions/aimpower-conventions.yml
+  - type: RateLimits
+    url: rate-limits/aimpower-rate-limits.yml
+  - type: Plans
+    url: plans/aimpower-plans-pricing.yml
+  image: https://brainsuite.ai/wp-content/uploads/2025/10/API_Integration_Home_2-1.webp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/aimpower-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/aimpower
+  url: https://brainsuite.ai/en/
+- type: Pricing
+  url: https://brainsuite.ai/en/pricing/
+- type: SignUp
+  url: https://brainsuite.ai/en/demo/
+- type: Login
+  url: https://app.brainsuite.ai/login
+- type: PrivacyPolicy
+  url: https://brainsuite.ai/en/data-protection/
+- type: Support
+  url: https://brainsuite.ai/en/contact-us/
+- type: HelpCenter
+  url: https://brainsuite.zendesk.com/hc/en-us
+- type: Blog
+  url: https://brainsuite.ai/en/resources/
+- type: TrustCenter
+  url: https://trust.brainsuite.ai/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/brainsuite-gmbh/
+- type: ChangeLog
+  url: changelog/aimpower-changelog.yml
+- type: Lifecycle
+  url: lifecycle/aimpower-lifecycle.yml
+- type: Conformance
+  url: conformance/aimpower-conformance.yml
+- type: Packages
+  url: packages/aimpower-packages.yml
+- type: LLMsTxt
+  url: llms/aimpower-llms.txt
+x-enrichment:
+  date: '2026-09-14'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v3

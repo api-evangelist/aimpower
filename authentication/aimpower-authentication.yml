@@ -1,0 +1,87 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB/.well-known/openid-configuration
+  (HTTP 200, fetched 2026-09-14) plus the anonymous runtime configuration document at
+  https://api.brainsuite.ai/brainsuite/frontend-configuration/v2/configuration (HTTP 200) and
+  the published support article
+  https://brainsuite.zendesk.com/hc/en-us/articles/22152596932253-What-about-privacy-issues-such-as-server-locations
+description: >-
+  How callers authenticate to Brainsuite. There is no public OpenAPI, so this profile is
+  built from documents the provider actually serves anonymously rather than derived from a
+  spec. Platform sign-in is OpenID Connect against an Amazon Cognito user pool the company
+  operates in eu-central-1, fronted by its own authorization-server domain
+  auth.brainsuite.ai. The Creative Effectiveness API is a separate, entirely closed surface:
+  every path on api.brainsuite.ai answers HTTP 401 {"message":"Unauthorized"} to an
+  anonymous caller, and the provider states that API credentials are issued on request.
+
+api_host: https://api.brainsuite.ai/brainsuite
+public_reference_published: false
+
+schemes:
+- id: oidc-cognito
+  type: openIdConnect
+  name: Brainsuite platform sign-in (OpenID Connect / Amazon Cognito)
+  in: header
+  scheme: bearer
+  bearer_format: JWT
+  openid_configuration: >-
+    https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB/.well-known/openid-configuration
+  issuer: https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB
+  jwks_uri: >-
+    https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB/.well-known/jwks.json
+  authorization_endpoint: https://auth.brainsuite.ai/oauth2/authorize
+  token_endpoint: https://auth.brainsuite.ai/oauth2/token
+  userinfo_endpoint: https://auth.brainsuite.ai/oauth2/userInfo
+  revocation_endpoint: https://auth.brainsuite.ai/oauth2/revoke
+  end_session_endpoint: https://auth.brainsuite.ai/logout
+  response_types_supported: [code, token]
+  id_token_signing_alg_values_supported: [RS256]
+  token_endpoint_auth_methods_supported: [client_secret_basic, client_secret_post]
+  subject_types_supported: [public]
+  scopes: scopes/aimpower-scopes.yml
+  user_pool: eu-central-1_i8L26ssHB
+  region: eu-central-1
+  web_client_id_public: true
+  note: >-
+    The user-pool web client id is published in the company's own anonymous frontend
+    configuration document, as is normal for a public OAuth client. mandatorySignIn is
+    false in that document, which is a client-side flag for the SPA bootstrap, not a
+    statement that API resources are open - they are not.
+
+- id: api-credentials
+  type: unknown
+  name: Creative Effectiveness API credentials
+  status: gated
+  note: >-
+    The provider's own support article "Introducing the Brainsuite API" states step one of
+    onboarding is "Request API credentials & documentation". No credential format, header
+    name, key prefix, or token-exchange flow is published anywhere public. Anonymous
+    requests to every probed path on api.brainsuite.ai return HTTP 401 with the body
+    {"message":"Unauthorized"} - the AWS API Gateway default - which reveals that the
+    surface is authorizer-protected but not which scheme it uses.
+  evidence:
+  - url: https://api.brainsuite.ai/brainsuite
+    status: 401
+  - url: https://api.brainsuite.ai/openapi.json
+    status: 401
+  - url: https://brainsuite.zendesk.com/hc/en-us/articles/25862139707549-Introducing-the-Brainsuite-API
+    status: 200
+    note: Read through the Zendesk Help Center API; the HTML view answers 403 to crawlers.
+
+enterprise_sso:
+  supported: true
+  detail: >-
+    "Optionally, login via corporate single sign on identity management can be integrated."
+    SSO is also listed as an entitlement from the Advanced plan upward on the pricing page.
+  docs: https://brainsuite.zendesk.com/hc/en-us/articles/22152596932253-What-about-privacy-issues-such-as-server-locations
+
+transport:
+  tls_required: true
+  detail: Data transfer via HTTPS; server-side encryption with Amazon SSE-S3 at rest.
+
+gaps:
+- No public API reference, so the API's own authentication scheme is unverifiable from outside.
+- No /.well-known/oauth-protected-resource on the API host (401), so an agent cannot
+  discover the authorization server from the resource server.
+- No security.txt on any company-controlled host.

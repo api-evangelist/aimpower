@@ -1,0 +1,197 @@
+generated: '2026-09-14'
+method: searched
+source: https://brainsuite.zendesk.com/hc/en-us/sections/22770902457885-Brainsuite-Releases (read through
+  the public Zendesk Help Center API, which returns HTTP 200; the HTML view answers 403 to crawlers)
+description: Brainsuite publishes dated release notes as the "Brainsuite Releases" section of its public
+  Zendesk help centre. Each release is one article describing a shipped platform capability. There is
+  no version-numbered changelog, no separate API changelog, and no breaking-change or deprecation notice
+  anywhere in the window observed - every one of the 35 entries between 2024-11-05 and 2026-09-06 is an
+  additive product change. Entries below are the complete section as fetched on 2026-09-14, newest first.
+changelog_url: https://brainsuite.zendesk.com/hc/en-us/sections/22770902457885-Brainsuite-Releases
+machine_readable_feed: https://brainsuite.zendesk.com/api/v2/help_center/en-us/sections/22770902457885/articles.json
+scheme: dated release notes, untitled versions (no semantic version, no date-stamped API version)
+covers_api: false
+covers_api_note: No entry in the section describes a change to the Creative Effectiveness API. The releases
+  track the web application.
+current_version: null
+breaking_changes_in_window: 0
+entry_count: 35
+window:
+  oldest: '2024-11-05'
+  newest: '2026-09-06'
+entries:
+- date: '2026-09-06'
+  updated: '2026-09-06'
+  title: Breakdown — See where quality is strong, and where it's slipping
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/38937749369885-Breakdown-See-where-quality-is-strong-and-where-it-s-slipping
+  type: addition
+- date: '2026-09-06'
+  updated: '2026-09-07'
+  title: A summer worth your attention
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/38937263289629-A-summer-worth-your-attention
+  type: addition
+- date: '2026-09-03'
+  updated: '2026-09-04'
+  title: Mark as Final — Show which version went live
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/38878793145117-Mark-as-Final-Show-which-version-went-live
+  type: addition
+- date: '2026-09-01'
+  updated: '2026-09-02'
+  title: Compare — Review all your results in one view
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/38818384599197-Compare-Review-all-your-results-in-one-view
+  type: addition
+- date: '2026-09-01'
+  updated: '2026-09-02'
+  title: Multi-Video Upload — Test a whole campaign in one go
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/38815025670685-Multi-Video-Upload-Test-a-whole-campaign-in-one-go
+  type: addition
+- date: '2026-08-23'
+  updated: '2026-08-25'
+  title: Rename projects and archive assets — keep your Library tidy!
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/38570978388381-Rename-projects-and-archive-assets-keep-your-Library-tidy
+  type: addition
+- date: '2026-07-01'
+  updated: '2026-07-03'
+  title: The New Library — Find and review your assets in seconds
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/37295507438493-The-New-Library-Find-and-review-your-assets-in-seconds
+  type: addition
+- date: '2026-05-19'
+  updated: '2026-05-29'
+  title: PDF Upload & Smart Cropping — From file prep to optimized creative in seconds
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/36199403759517-PDF-Upload-Smart-Cropping-From-file-prep-to-optimized-creative-in-seconds
+  type: addition
+- date: '2026-05-11'
+  updated: '2026-06-06'
+  title: Analytics — Compare, track, and learn across every result
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/36001477328925-Analytics-Compare-track-and-learn-across-every-result
+  type: addition
+- date: '2026-04-21'
+  updated: '2026-04-27'
+  title: SKU Detection Update — Analyze shelves even faster with improved accuracy
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/35533429004061-SKU-Detection-Update-Analyze-shelves-even-faster-with-improved-accuracy
+  type: addition
+- date: '2026-04-20'
+  updated: '2026-04-20'
+  title: Automated AOI Suggestions — Let Brainsuite set up your AOIs
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/35512271936797-Automated-AOI-Suggestions-Let-Brainsuite-set-up-your-AOIs
+  type: addition
+- date: '2026-04-10'
+  updated: '2026-04-10'
+  title: Advice - now even more actionable!
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/35269563687453-Advice-now-even-more-actionable
+  type: addition
+- date: '2026-03-19'
+  updated: '2026-03-19'
+  title: New AOI Shapes — Draw tighter outlines, get sharper results!
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/34747548100637-New-AOI-Shapes-Draw-tighter-outlines-get-sharper-results
+  type: addition
+- date: '2025-09-17'
+  updated: '2025-09-18'
+  title: Performance Prediction for Digital Performance Metrics
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/30390834853917-Performance-Prediction-for-Digital-Performance-Metrics
+  type: addition
+- date: '2025-07-07'
+  updated: '2025-07-08'
+  title: 'Introducing the improved fogmap: Clearer insights, better decisions'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/28677479780893-Introducing-the-improved-fogmap-Clearer-insights-better-decisions
+  type: addition
+- date: '2025-06-13'
+  updated: '2025-06-25'
+  title: 'New KPI for our Static Apps: Perceived Image Brightness'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/28095026223389-New-KPI-for-our-Static-Apps-Perceived-Image-Brightness
+  type: addition
+- date: '2025-06-08'
+  updated: '2025-06-10'
+  title: 'New in Brainsuite: Side-by-side result comparison'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/27974113459485-New-in-Brainsuite-Side-by-side-result-comparison
+  type: addition
+- date: '2025-06-03'
+  updated: '2025-06-06'
+  title: 'New Feature: Automatic Voice-Over Text transcription in ACE Video Apps'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/27853267131037-New-Feature-Automatic-Voice-Over-Text-transcription-in-ACE-Video-Apps
+  type: addition
+- date: '2025-04-30'
+  updated: '2025-06-06'
+  title: Manage your Brainsuite users with ease
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/27007334568861-Manage-your-Brainsuite-users-with-ease
+  type: addition
+- date: '2025-03-31'
+  updated: '2025-04-07'
+  title: 'Cut the clicks: Upload 20 assets in one easy drag & drop'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/26259769486109-Cut-the-clicks-Upload-20-assets-in-one-easy-drag-drop
+  type: addition
+- date: '2025-03-28'
+  updated: '2025-04-03'
+  title: Download your data as Excel and with color-coded scores!
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/26212282884253-Download-your-data-as-Excel-and-with-color-coded-scores
+  type: addition
+- date: '2025-03-27'
+  updated: '2025-04-03'
+  title: 'More clarity, more control: Brand Name and Product Name attention just got smarter'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/26169172448669-More-clarity-more-control-Brand-Name-and-Product-Name-attention-just-got-smarter
+  type: addition
+- date: '2025-03-11'
+  updated: '2025-04-03'
+  title: UI improvements for optimized briefing process
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25773204625693-UI-improvements-for-optimized-briefing-process
+  type: addition
+- date: '2025-03-10'
+  updated: '2025-04-03'
+  title: New compliance enabler
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25743910166045-New-compliance-enabler
+  type: addition
+- date: '2025-02-17'
+  updated: '2025-04-03'
+  title: 'Enhancing report privacy: Marking reports as confidential'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25208395186333-Enhancing-report-privacy-Marking-reports-as-confidential
+  type: addition
+- date: '2025-02-13'
+  updated: '2025-04-03'
+  title: Improved visualization of Visual Hierarchy KPI
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25138148462493-Improved-visualization-of-Visual-Hierarchy-KPI
+  type: addition
+- date: '2025-02-12'
+  updated: '2025-04-03'
+  title: 'New KPI improvement: Enhanced First and Last Scene attention analysis'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25116926922013-New-KPI-improvement-Enhanced-First-and-Last-Scene-attention-analysis
+  type: addition
+- date: '2025-02-10'
+  updated: '2025-04-03'
+  title: Enhanced text grouping for improved semantic text analysis
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25064276552733-Enhanced-text-grouping-for-improved-semantic-text-analysis
+  type: addition
+- date: '2025-02-07'
+  updated: '2025-02-12'
+  title: New channel alert! Pinterest now available in our ACE Social Media Video App
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/25005038798493-New-channel-alert-Pinterest-now-available-in-our-ACE-Social-Media-Video-App
+  type: addition
+- date: '2025-01-09'
+  updated: '2025-04-03'
+  title: Improved keyframe selection
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/24299600548381-Improved-keyframe-selection
+  type: addition
+- date: '2025-01-02'
+  updated: '2025-04-03'
+  title: 'New feature: Advice'
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/24136002829597-New-feature-Advice
+  type: addition
+- date: '2024-12-13'
+  updated: '2025-04-03'
+  title: Improved asset navigation for briefing and reporting
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/23708578538141-Improved-asset-navigation-for-briefing-and-reporting
+  type: addition
+- date: '2024-11-29'
+  updated: '2024-11-29'
+  title: Improved Fogmap visualization
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/23351228655645-Improved-Fogmap-visualization
+  type: addition
+- date: '2024-11-05'
+  updated: '2025-04-03'
+  title: Input validation
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/22770922398621-Input-validation
+  type: addition
+- date: '2024-11-05'
+  updated: '2025-04-03'
+  title: Reference asset feature for enhanced comparisons
+  url: https://brainsuite.zendesk.com/hc/en-us/articles/22770904708253-Reference-asset-feature-for-enhanced-comparisons
+  type: addition

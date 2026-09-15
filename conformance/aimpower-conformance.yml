@@ -1,0 +1,119 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  Probed discovery documents and published statements, 2026-09-14. OAuth/OIDC entries are
+  evidenced by the live discovery document; the data-protection entries are evidenced by the
+  company's own published privacy and support pages. Nothing here is inferred from a
+  specification, because Brainsuite publishes none.
+description: >-
+  Cross-cutting standards Brainsuite's public surface does and does not conform to. The
+  identity layer is genuinely standards-based - a working OpenID Connect discovery document
+  with RS256 ID tokens, a JWKS endpoint and RFC 7009 revocation, all served from an Amazon
+  Cognito user pool the company operates in eu-central-1. Everything beyond identity is
+  unevidenced: no OpenAPI, no RFC 9457 problem details, no RFC 8594 sunset signalling, no
+  idempotency key, no documented pagination. This provider's market - advertising creative
+  effectiveness measurement - has no adopted domain contract standard that the contract could
+  declare, so the domain-standard slot is genuinely not applicable rather than failed.
+
+conformance:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB/.well-known/openid-configuration
+    (HTTP 200) advertises authorization_endpoint, token_endpoint, revocation_endpoint,
+    response_types_supported [code, token] and token_endpoint_auth_methods_supported
+    [client_secret_basic, client_secret_post] on https://auth.brainsuite.ai.
+- id: oidc
+  conforms: true
+  evidence: >-
+    The same document is an OpenID Provider Configuration: issuer, jwks_uri, userinfo_endpoint,
+    end_session_endpoint, subject_types_supported [public] and
+    id_token_signing_alg_values_supported [RS256] are all present, and scopes_supported
+    includes openid.
+- id: oauth2-token-revocation-rfc7009
+  conforms: true
+  evidence: revocation_endpoint https://auth.brainsuite.ai/oauth2/revoke in the discovery document.
+- id: jwt-rfc7519
+  conforms: true
+  evidence: >-
+    ID tokens are RS256-signed JWTs verifiable against
+    https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB/.well-known/jwks.json
+    (HTTP 200).
+- id: oauth2-protected-resource-metadata-rfc9728
+  conforms: false
+  evidence: >-
+    https://api.brainsuite.ai/.well-known/oauth-protected-resource returns HTTP 401, so a
+    client cannot discover the authorization server from the resource server.
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document was found. /openapi.json, /openapi.yaml, /swagger.json,
+    /v1/openapi.json, /api-docs, /docs and /redoc all return HTTP 401 on api.brainsuite.ai and
+    are not served from brainsuite.ai or app.brainsuite.ai.
+- id: graphql
+  conforms: false
+  evidence: https://api.brainsuite.ai/graphql returns HTTP 401; no GraphQL surface is documented.
+- id: asyncapi
+  conforms: false
+  evidence: >-
+    No event, streaming or webhook surface is documented. The only asynchronous mechanism the
+    company describes is email notification when processing completes.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Not determinable and not documented. The single observable error body is the AWS API
+    Gateway default {"message":"Unauthorized"}, which is not application/problem+json.
+- id: rfc8594
+  conforms: false
+  evidence: No Sunset or Deprecation header commitment is published; see lifecycle/aimpower-lifecycle.yml.
+- id: idempotency
+  conforms: false
+  evidence: >-
+    No idempotency key, replay window or conflict behaviour is documented on any public
+    surface; see conventions/aimpower-conventions.yml.
+- id: pagination
+  conforms: false
+  evidence: No pagination style, parameters or response envelope are published.
+- id: security-txt-rfc9116
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404 on brainsuite.ai, 401 on api.brainsuite.ai and an
+    HTML SPA shell on app.brainsuite.ai and trust.brainsuite.ai.
+- id: gdpr
+  conforms: true
+  evidence: >-
+    https://brainsuite.ai/en/data-protection/ (HTTP 200) names heyData GmbH, Berlin as
+    external Data Protection Officer (datenschutz@heydata.eu) and enumerates subprocessors;
+    https://brainsuite.zendesk.com/hc/en-us/articles/22152596932253-What-about-privacy-issues-such-as-server-locations
+    states "All data processing GDPR-compliant" with hosting in AWS eu-central-1 (Frankfurt)
+    and confirms the company does not process end-consumer personally identifiable
+    information. This is a self-declared compliance posture, not an audited certification.
+- id: data-residency-eu
+  conforms: true
+  evidence: >-
+    Same article: hosted in AWS EU Central (Frankfurt am Main), S3 storage with server-side
+    SSE-S3 encryption, client-specific buckets, CloudFront CDN, HTTPS transport.
+
+domain_standard:
+  applicable: false
+  rationale: >-
+    Creative-effectiveness prediction and ad pre-testing has no adopted machine-readable
+    contract standard the way advertising transaction has OpenRTB, identity has SCIM, or
+    health has FHIR. Brainsuite is a measurement vendor, not an exchange or a bidder: it does
+    not run a bid endpoint, an ad-serving surface, or a VAST/VPAID surface, so OpenRTB and the
+    IAB transactional standards do not apply to it. No domain standard is claimed and none is
+    scored - this is a reward-only dimension and inventing a conformance here would be a
+    fabrication.
+
+certifications:
+  published: false
+  trust_center: https://trust.brainsuite.ai/
+  note: >-
+    A Vanta-operated trust centre exists at trust.brainsuite.ai and returns HTTP 200 with the
+    document title "Brainsuite.ai Trust Center", but its contents render entirely client-side
+    from the Vanta EU tenant and no certification name (SOC 2, ISO 27001, TISAX or otherwise)
+    is readable from the served HTML or from any Vanta JSON endpoint reachable anonymously.
+    The company's own data-protection page names no certification either - it shows a heyData
+    data-protection seal, which is a compliance-representation service rather than an audited
+    certification. No Compliance pointer is therefore emitted: the trust centre's existence is
+    recorded, its certifications are not, because none could be read.

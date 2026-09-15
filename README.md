@@ -1,4 +1,4 @@
-# Aimpower
+# Brainsuite.ai (formerly aimpower)
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,5 +64,36 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aimpower is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/aimpower
+Brainsuite.ai GmbH -- founded in 2020 in Hamburg as **aimpower GmbH**, now registered at
+Kuddewoerde, Schleswig-Holstein -- builds **Brainsuite**, an AI creative-effectiveness platform
+that predicts how an advertising asset will perform before any media budget is committed. Built on
+applied consumer-neuroscience models, it scores video, static, packaging, shelf, out-of-home,
+digital-banner and social-media creative against an ACE (Advertising Creative Effectiveness) score
+and effectiveness pillars covering attention, persuasion, strategic fit, processing ease, emotional
+engagement and branding.
+
+Alongside the self-serve application at `app.brainsuite.ai`, the company sells a **Creative
+Effectiveness API** that partner platforms -- generative-AI tools, creative production suites,
+ad-tech and activation stacks, digital-asset-management systems and creator networks -- embed so
+that every asset their customers produce is scored in-workflow.
+
+## What this profile found
+
+The API is real and running: `https://api.brainsuite.ai/brainsuite` is named as the public API base
+by the company's own anonymously reachable runtime configuration document, and every path on that
+host answers `HTTP 401 {"message":"Unauthorized"}`. But **no machine-readable contract is
+published** -- no OpenAPI, GraphQL SDL, AsyncAPI, MCP server, agent card, SDK or public reference.
+The provider's own support article states that step one of onboarding is "Request API credentials &
+documentation", so the reference ships privately with the credentials.
+
+What *is* public and was captured here: a working **OpenID Connect discovery document** for the
+Amazon Cognito user pool behind the platform (authorization endpoints on `auth.brainsuite.ai`), a
+**35-entry dated changelog** running 2024-11-05 to 2026-09-06, a **four-tier plan ladder** that
+publishes seats but no prices, a Vanta **trust centre** whose certifications render client-side and
+could not be read, and a GDPR/EU-residency posture (AWS `eu-central-1`, SSE-S3, no model training on
+customer data).
+
+- Company: https://brainsuite.ai/en/
+- API: https://brainsuite.ai/en/creative-effectiveness-api/
+- Former domains: `aimpower.ai` and `aimpower.de` now 301 to `brainsuite.ai`
+- Listing source: https://equityzen.com/company/aimpower

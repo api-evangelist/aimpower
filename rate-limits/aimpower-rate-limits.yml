@@ -1,0 +1,36 @@
+generated: '2026-09-14'
+method: searched
+source: >-
+  Searched https://brainsuite.ai/en/creative-effectiveness-api/, https://brainsuite.ai/en/pricing/
+  and the full public Zendesk help centre (all 9 API-related articles, read through
+  https://brainsuite.zendesk.com/api/v2/help_center/articles/search.json?query=API) on 2026-09-14.
+description: >-
+  Brainsuite publishes no rate limits for the Creative Effectiveness API. No quota, window,
+  burst, concurrency ceiling, response header family or 429 behaviour is documented on any
+  public surface, and none can be observed because every path on api.brainsuite.ai answers
+  HTTP 401 to an anonymous caller - there is no unauthenticated response whose headers could
+  be read. The only throughput statements the company makes are marketing prose ("handles
+  thousands of assets", "run thousands of evaluations simultaneously - without slowing down
+  your operations"), which name no number and no enforcement mechanism. Pricing is
+  usage-based, so a consumption ceiling almost certainly exists behind the contract; it is
+  simply not published.
+limit_count: 0
+headers_documented: false
+headers_observed: false
+exhaustion_status_code: null
+retry_after: unknown
+limits: []
+evidence:
+- url: https://brainsuite.ai/en/creative-effectiveness-api/
+  status: 200
+  finding: Usage-based pricing described; no limits, quotas or headers named.
+- url: https://api.brainsuite.ai/brainsuite
+  status: 401
+  finding: >-
+    Anonymous request returns {"message":"Unauthorized"} with no RateLimit-*, X-RateLimit-*
+    or Retry-After header, so no runtime signal is observable without credentials.
+- url: https://brainsuite.zendesk.com/hc/en-us/articles/25862139707549-Introducing-the-Brainsuite-API
+  status: 200
+  finding: >-
+    The provider's own API overview article describes scale in prose only and directs
+    integrators to request credentials and documentation.

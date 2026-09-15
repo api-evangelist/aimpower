@@ -1,0 +1,59 @@
+generated: '2026-09-14'
+method: searched
+source: >-
+  Registry searches on 2026-09-14 - registry.npmjs.org/-/v1/search for "brainsuite" and
+  "aimpower" (0 results each), pypi.org/pypi/{brainsuite,aimpower}/json (HTTP 404 each),
+  and api.github.com/search/users for both names. Also read the company's API partner page
+  and the "Introducing the Brainsuite API" support article for SDK or client-library links.
+description: >-
+  Brainsuite publishes no client libraries. No first-party SDK exists on npm, PyPI, or any
+  other registry searched, no CDN-distributed client build is referenced from the
+  application, and neither the partner page nor the API overview article links a helper
+  library, sample client or code snippet. Integration is described as raw HTTPS calls with
+  credentials and documentation issued on request. Two GitHub organisations matching the
+  company's names exist but are both empty and neither is claimed by the company on its own
+  site, so neither is recorded as a first-party source.
+package_count: 0
+official_sdk_count: 0
+packages: []
+registries_searched:
+- registry: npm
+  query: brainsuite
+  results: 0
+  endpoint: https://registry.npmjs.org/-/v1/search?text=brainsuite
+- registry: npm
+  query: aimpower
+  results: 0
+  endpoint: https://registry.npmjs.org/-/v1/search?text=aimpower
+- registry: pypi
+  query: brainsuite
+  status: 404
+  endpoint: https://pypi.org/pypi/brainsuite/json
+- registry: pypi
+  query: aimpower
+  status: 404
+  endpoint: https://pypi.org/pypi/aimpower/json
+github_organizations_checked:
+- login: brainsuite-ai
+  url: https://github.com/brainsuite-ai
+  public_repos: 0
+  created: '2026-04-18'
+  first_party: unconfirmed
+  note: >-
+    Name-matching organisation with zero public repositories and no profile metadata. Not
+    linked from any Brainsuite page, so ownership is unproven and no GitHubOrganization
+    pointer is emitted.
+- login: Aimpower
+  url: https://github.com/Aimpower
+  public_repos: 0
+  created: '2020-07-09'
+  first_party: unconfirmed
+  note: Same - empty organisation, unlinked from the company site.
+- login: BrainSuite
+  url: https://github.com/BrainSuite
+  first_party: false
+  note: >-
+    NOT this company. github.com/BrainSuite is the BrainSuite neuroimaging toolkit
+    (brainsuite.org, support@brainsuite.org) - open-source MRI brain-image processing, an
+    unrelated project that merely shares the name. Recorded here so a future round does not
+    mis-attribute its repositories to Brainsuite.ai GmbH.

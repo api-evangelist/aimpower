@@ -1,0 +1,43 @@
+generated: '2026-09-14'
+method: searched
+source: >-
+  Searched for a hosted or packaged MCP server on 2026-09-14 - the company's partner and
+  platform pages, the full public Zendesk help centre (including the "AI Agents - beyond the
+  hype" article), npm and PyPI, and direct probes of api.brainsuite.ai. Nothing was found.
+description: >-
+  Brainsuite ships no Model Context Protocol server, hosted or local. No /mcp endpoint, no
+  npx-installable package, no mention of MCP in any published article or product page. No
+  candidate tool list is derived either: the pipeline derives MCP tool candidates from
+  OpenAPI operations, and Brainsuite publishes no OpenAPI, so there is no operation set to
+  project into tools. Inventing tool names from marketing prose would be fabrication. This
+  file records a measured absence; no MCPServer pointer is wired into apis.yml, because one
+  would assert an agent surface the provider does not operate.
+status: absent
+tools: []
+tool_count: 0
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+evidence:
+- url: https://api.brainsuite.ai/brainsuite
+  status: 401
+  finding: Entire API host is authorizer-gated; no anonymous surface to introspect.
+- url: https://brainsuite.ai/en/creative-effectiveness-api/
+  status: 200
+  finding: >-
+    The partner page describes five embedding patterns (generative-AI platforms, creative
+    production tools, ad-tech, DAM, creator networks) and names none of them as MCP; the
+    integration model described is a REST API call from the partner's own backend.
+- url: https://registry.npmjs.org/-/v1/search?text=brainsuite
+  status: 200
+  finding: 0 packages.
+related:
+  agent_interest: >-
+    The company publishes an article on AI agents
+    (https://brainsuite.zendesk.com/hc/en-us/articles/24238992727453-AI-Agents-beyond-the-hype)
+    and markets embedding into generative-AI platforms, so the appetite exists - but no
+    agent-callable surface has shipped.

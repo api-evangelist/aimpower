@@ -1,0 +1,35 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB/.well-known/openid-configuration
+  (HTTP 200, fetched 2026-09-14). Scopes are read verbatim from scopes_supported in that
+  document - not derived from a specification, because Brainsuite publishes none.
+description: >-
+  OAuth 2.0 / OpenID Connect scopes advertised by Brainsuite's authorization server. The
+  set is the stock Amazon Cognito OIDC scope list: identity scopes only. No resource or
+  product scopes (for example an asset:write or report:read family for the Creative
+  Effectiveness API) are advertised at the discovery endpoint, and no scope reference page
+  is published. Any API-specific permission model is issued privately with credentials.
+authorization_server: https://auth.brainsuite.ai
+issuer: https://cognito-idp.eu-central-1.amazonaws.com/eu-central-1_i8L26ssHB
+docs: null
+docs_note: No public scope or permissions reference page was found on any Brainsuite host.
+scope_count: 4
+scopes:
+- name: openid
+  description: >-
+    Request an ID token and authenticate the end user via OpenID Connect. Standard OIDC
+    scope, required to receive an id_token.
+  standard: true
+- name: email
+  description: Release the end user's email address and email_verified claim to the client.
+  standard: true
+- name: phone
+  description: Release the end user's phone_number and phone_number_verified claims.
+  standard: true
+- name: profile
+  description: >-
+    Release the end user's default profile claims (name, family_name, given_name, picture,
+    locale and similar).
+  standard: true
+product_scopes_published: false
