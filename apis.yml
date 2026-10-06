@@ -15,7 +15,7 @@ x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.20'
 created: '2026-09-14'
-modified: '2026-09-14'
+modified: '2026-10-06'
 tags:
 - Company
 - Advertising
@@ -76,6 +76,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://brainsuite.ai/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/aimpower-domain-security.yml
 - type: Website
