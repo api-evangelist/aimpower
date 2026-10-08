@@ -86,3 +86,33 @@ notes:
 - >-
   The pricing page links a German-language variant at /en/pricing_german/; it carries the
   same four tiers and likewise publishes no prices.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Starter
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Advanced
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Professional
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
