@@ -76,6 +76,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/aimpower-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/aimpower-rate-limits.yml
 - url: https://brainsuite.ai/feed/
   type: BlogRSS
 - type: DomainSecurity
