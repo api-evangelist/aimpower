@@ -1,4 +1,4 @@
-# Brainsuite.ai (formerly aimpower)
+# Brainsuite.ai
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,36 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Brainsuite.ai GmbH -- founded in 2020 in Hamburg as **aimpower GmbH**, now registered at
-Kuddewoerde, Schleswig-Holstein -- builds **Brainsuite**, an AI creative-effectiveness platform
-that predicts how an advertising asset will perform before any media budget is committed. Built on
-applied consumer-neuroscience models, it scores video, static, packaging, shelf, out-of-home,
-digital-banner and social-media creative against an ACE (Advertising Creative Effectiveness) score
-and effectiveness pillars covering attention, persuasion, strategic fit, processing ease, emotional
-engagement and branding.
+Brainsuite.ai GmbH - founded in 2020 in Hamburg as aimpower GmbH, now registered at Kuddewoerde, Germany - builds Brainsuite, an AI creative-effectiveness platform that predicts how an advertising asset will perform before any media budget is committed. Built on applied consumer-neuroscience models, it scores video, static, packaging, shelf, out-of-home, digital-banner and social-media creative against an ACE (Advertising Creative Effectiveness) score with pillars for attention, persuasion, strategic fit, processing ease, emotional engagement and branding. Alongside the self-serve app at app.brainsuite.ai, it sells a Creative Effectiveness API that partner platforms - generative-AI tools, creative production suites, ad-tech, DAM systems and creator networks - embed to score every asset in-workflow. The API is marketed publicly but its reference and credentials are issued only through a sales conversation.
 
-Alongside the self-serve application at `app.brainsuite.ai`, the company sells a **Creative
-Effectiveness API** that partner platforms -- generative-AI tools, creative production suites,
-ad-tech and activation stacks, digital-asset-management systems and creator networks -- embed so
-that every asset their customers produce is scored in-workflow.
+**Areas:** Company · Advertising · Marketing · Artificial Intelligence · Creative Effectiveness · Ad Testing · Market Research · Consumer Neuroscience · Media · Software-as-a-Service · Germany
 
-## What this profile found
+## Brainsuite.ai on APIs.io
 
-The API is real and running: `https://api.brainsuite.ai/brainsuite` is named as the public API base
-by the company's own anonymously reachable runtime configuration document, and every path on that
-host answers `HTTP 401 {"message":"Unauthorized"}`. But **no machine-readable contract is
-published** -- no OpenAPI, GraphQL SDL, AsyncAPI, MCP server, agent card, SDK or public reference.
-The provider's own support article states that step one of onboarding is "Request API credentials &
-documentation", so the reference ships privately with the credentials.
+Everything profiled for Brainsuite.ai is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/aimpower/](https://apis.io/providers/aimpower/)** — or go straight to one of the APIs or properties below.
 
-What *is* public and was captured here: a working **OpenID Connect discovery document** for the
-Amazon Cognito user pool behind the platform (authorization endpoints on `auth.brainsuite.ai`), a
-**35-entry dated changelog** running 2024-11-05 to 2026-09-06, a **four-tier plan ladder** that
-publishes seats but no prices, a Vanta **trust centre** whose certifications render client-side and
-could not be read, and a GDPR/EU-residency posture (AWS `eu-central-1`, SSE-S3, no model training on
-customer data).
+### APIs (1)
 
-- Company: https://brainsuite.ai/en/
-- API: https://brainsuite.ai/en/creative-effectiveness-api/
-- Former domains: `aimpower.ai` and `aimpower.de` now 301 to `brainsuite.ai`
-- Listing source: https://equityzen.com/company/aimpower
+- [Brainsuite Creative Effectiveness API](https://apis.io/apis/aimpower/aimpower-creative-effectiveness-api/) — Automated, programmatic access to the same AI creative-evaluation engine behind the Brainsuite application. Partners and enterprise customers upload assets…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Aimpower Authentication](https://apis.io/security/aimpower/aimpower-authentication/)
+- [Aimpower Domain Security](https://apis.io/security/aimpower/aimpower-domain-security/)
+- [Aimpower Trust Center](https://apis.io/security/aimpower/aimpower-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Aimpower Scopes](https://apis.io/scopes/aimpower/aimpower-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Aimpower Plans Pricing](https://apis.io/plans/aimpower/aimpower-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Aimpower Rate Limits](https://apis.io/rate-limits/aimpower/aimpower-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://brainsuite.ai/en/)
+- [Pricing](https://brainsuite.ai/en/pricing/)
+- [Sign up](https://brainsuite.ai/en/demo/)
+- [Support](https://brainsuite.ai/en/contact-us/)
+- [Blog](https://brainsuite.ai/en/resources/)
+- [Trust centre](https://trust.brainsuite.ai/)
+- [Privacy policy](https://brainsuite.ai/en/data-protection/)
+
+## API Evangelist rating
+
+**Kin Score 31.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 65.8 |
+
+**Agent readiness 9.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 28.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/aimpower/](https://apis.io/providers/aimpower/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Brainsuite.ai: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/aimpower/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
